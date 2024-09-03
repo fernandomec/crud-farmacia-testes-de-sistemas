@@ -22,9 +22,9 @@
                 </section>
                 
                 <!-- CARRINHO -->
-                <section class="carrinho">
+                <section class="carrinho" id="carrinho">
 
-                    <a href="#" class="link-item">
+                    <a  href="#" class="link-item">
                         <img src="https://cdn-icons-png.flaticon.com/128/4379/4379575.png" alt="Carrinho" class="icon">
                         <span>Carrinho</span>
                     </a>
@@ -32,6 +32,7 @@
                 </section>
             </div>
             
+
             <!-- PESQUISA -->
             <div class="search-bar-container">
 
@@ -86,7 +87,121 @@
         </div>
         
     </header>
-<hr>
+
+
+
+<!--CARROUSSEL PROPAGANDAS - https://codepen.io/tuesta/pen/QoMqBY -->
+
+<div id="carroussel">
+
+    
+    <div id="wrapper">
+
+        <div id="carousel">
+            <div id="content">
+                
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+                <section class="card">
+                    <img src="https://www.cevrimiciterapi.com/wp-content/uploads/2022/12/rivotril-1024x768.jpg" alt="Imagem do Produto">
+                    <h2>Nome do Produto</h2>
+                    <p>Descrição breve do produto.</p>
+                    <h1>R$ 0,00</h1>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTOES ESQUERDA E DIREITA-->
+    <button id="prev">
+        <img src="imgs/seta-esquerda.png" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0V0z"/>
+        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/>
+        </svg>
+    </button>
+    <button id="next">
+        <img src="imgs/seta-direita.png" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0V0z"/>
+        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"/>
+        </svg>
+    </button>
+    </div>
+</div>
+<!-- JS PARA CARROUSSEL -->
+<script>
+    const gap = 16;
+
+const carousel = document.getElementById("carousel"),
+  content = document.getElementById("content"),
+  next = document.getElementById("next"),
+  prev = document.getElementById("prev");
+
+next.addEventListener("click", e => {
+  carousel.scrollBy(width + gap, 0);
+  if (carousel.scrollWidth !== 0) {
+    prev.style.display = "flex";
+  }
+  if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+    next.style.display = "none";
+  }
+});
+prev.addEventListener("click", e => {
+  carousel.scrollBy(-(width + gap), 0);
+  if (carousel.scrollLeft - width - gap <= 0) {
+    prev.style.display = "none";
+  }
+  if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+    next.style.display = "flex";
+  }
+});
+
+let width = carousel.offsetWidth;
+window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+</script>
+
 
 
 <!--CATEGORIAS DE PRODUTOS-->
@@ -94,13 +209,11 @@
 
 
 
-<span>aaaaaaaaaa</span>
-
 
 
 
 <!--FOOTER-->
-<hr>
+
     <footer>
         
         <div id="linha-um">
@@ -109,28 +222,16 @@
                 <h3>Sobre Nós</h3>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
             </section>
             
             <section class="formatar-texto"> <!--Serviços-->
                 <h3>Serviços</h3>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
             </section class="formatar-texto">
 
             <section class="formatar-texto"> <!--Institucional-->
                 <h3>Direitos</h3>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 
@@ -143,28 +244,16 @@
                 <h3>Lorem</h3>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
             </section>
             
             <section class="formatar-texto"> <!--Privacidade de dados-->
                 <h3>Lorem</h3>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
             </section>
 
             <section class="formatar-texto"> <!--Marketplace-->
                 <h3>Lorem</h3>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
-                <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
                 <a href="#"><span>Lorem Ipsum</span></a>
             </section>
@@ -175,7 +264,7 @@
         </div>
 
         <section id="assinatura">
-        <span>  © Made by Calica Victória e Fernando Matos</span>
+        <span>  © Made by Calica Victória, Fernando Matos e Filipe de Sá</span>
         </section>
 
     </footer>

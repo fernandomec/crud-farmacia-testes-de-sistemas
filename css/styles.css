@@ -89,7 +89,7 @@ header {
 .link-item .icon {
     width: 40px;
     height: 40px;
-    filter: invert(29%) sepia(92%) saturate(5616%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    filter: invert(6%) sepia(100%) saturate(10000%) hue-rotate(0deg) brightness(100%) contrast(100%);
     
 }
 
@@ -208,3 +208,125 @@ header span:hover, a:hover, a img:hover {
         gap: 20px;
     }
 }
+
+
+/* ROLAMENTO ANUNCIO */
+#carroussel{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+  
+#wrapper {
+    width: 100%;
+    position: relative;
+}
+  
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+  
+#carousel::-webkit-scrollbar {
+    height: 0;
+}
+  
+#prev,
+#next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: rgb(156, 156, 156);
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+}
+  
+#prev {
+    top: 30%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+}
+  
+#next {
+    top: 30%;
+    right: 0;
+    transform: translate(-50%, -50%); 
+}
+  
+#content {
+    display: grid;
+    grid-gap: 20px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+  
+.item {
+    width: 300px;
+    height: 300px;
+}
+
+
+
+/*card do carroussel*/
+#card {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+  }
+  
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    padding: 16px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 16px 0;
+}
+
+.card p {
+    color: #555;
+    font-size: 1em;
+    margin: 16px 0;
+}
+
+.add-to-cart {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #cc0000;  
+}
+  
